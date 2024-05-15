@@ -2,6 +2,9 @@ const ROCK = 1;
 const PAPER = 2;
 const SCISSORS = 3;
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getHumanChoice() {
   for (;;) {
     let playerChoice = prompt("Choose Rock, Paper or Scissors: ").toUpperCase();
