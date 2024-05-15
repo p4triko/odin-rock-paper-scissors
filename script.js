@@ -3,9 +3,14 @@ const ROCK = 1;
 const PAPER = 2;
 const SCISSORS = 3;
 
+const ROUNDS = 5;
+
 // Declare player and computer score variables
 let humanScore = 0;
 let computerScore = 0;
+
+playGame();
+console.log("Refresh page to try again!");
 
 // Logic to get the human choice
 function getHumanChoice() {
@@ -36,40 +41,53 @@ function getComputerChoice() {
 // Paper beat Rock, Paper L Scissors, Paper TIE Paper
 // Scissors beat Paper, Scissors L Rock, Scissors TIE Scissors
 
+// Logic for rounds
 function playRound(humanChoice, computerChoice) {
   // Rock game conditions
   if (humanChoice === ROCK && computerChoice === SCISSORS) {
     humanScore++;
-    console.log(`You win`);
+    console.log(`You won the round`);
   } else if (humanChoice === ROCK && computerChoice === PAPER) {
     computerScore++;
-    console.log(`You lose`);
+    console.log(`You lost the round`);
   } else if (humanChoice === ROCK && computerChoice === ROCK) {
-    console.log(`You tie`);
+    console.log(`You tied this round`);
   }
   // Scissor game conditions
   else if (humanChoice === PAPER && computerChoice === ROCK) {
     humanScore++;
-    console.log(`You win`);
+    console.log(`You won the round`);
   } else if (humanChoice === PAPER && computerChoice === SCISSORS) {
     computerScore++;
-    console.log(`You lose`);
+    console.log(`You lost the round`);
   } else if (humanChoice === PAPER && computerChoice === PAPER) {
-    console.log(`You tie`);
+    console.log(`You tied this round`);
   }
   // Scissor game conditions
   else if (humanChoice === SCISSORS && computerChoice === PAPER) {
     humanScore++;
-    console.log(`You win`);
+    console.log(`You won the round`);
   } else if (humanChoice === SCISSORS && computerChoice === ROCK) {
     computerScore++;
-    console.log(`You lose`);
+    console.log(`You lost the round`);
   } else if (humanChoice === SCISSORS && computerChoice === SCISSORS) {
-    console.log(`You tie`);
+    console.log(`You tied this round`);
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
+// Logic for the game itself
+function playGame() {
+  for (let i = 1; i < ROUNDS + 1; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log(`Round ${i} of ${ROUNDS}`);
+    playRound(humanSelection, computerSelection);
+  }
+  if (humanScore > computerScore) {
+    console.log("You won");
+  } else if (humanScore < computerScore) {
+    console.log("You lost");
+  } else {
+    console.log("You tied");
+  }
+}
