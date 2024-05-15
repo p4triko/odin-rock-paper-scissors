@@ -13,8 +13,7 @@ const ROUNDS = 5;
 let humanScore = 0;
 let computerScore = 0;
 
-playGame();
-console.log("Refresh page to try again!");
+console.log("playGame() to start!");
 
 // Logic to get the human choice
 function getHumanChoice() {
@@ -113,4 +112,5 @@ function playGame() {
   } else {
     console.log("You tied");
   }
+  console.log("playGame() to try again!");
 }
