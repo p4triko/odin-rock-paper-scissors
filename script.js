@@ -12,4 +12,39 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-console.log(getComputerChoice());
+rockButton.addEventListener("click", () => {
+  playGame("Rock");
+});
+
+paperButton.addEventListener("click", () => {
+  playGame("Paper");
+});
+
+scissorsButton.addEventListener("click", () => {
+  playGame("Scissors");
+});
+
+function playGame(playerChoice) {
+  let computerChoice = getComputerChoice();
+  if (playerChoice === computerChoice) {
+    result.innerText = "It's a tie!";
+  } else if (playerChoice === "Rock" && computerChoice === "Paper") {
+    computerScore++;
+    result.innerText = "You lose! Rock loses to Paper.";
+  } else if (playerChoice === "Rock" && computerChoice === "Scissors") {
+    humanScore++;
+    result.innerText = "You win! Rock beats Scissors.";
+  } else if (playerChoice === "Paper" && computerChoice === "Scissors") {
+    computerScore++;
+    result.innerText = "You lose! Paper loses to Scissors.";
+  } else if (playerChoice === "Paper" && computerChoice === "Rock") {
+    humanScore++;
+    result.innerText = "You win! Paper beats Rock.";
+  } else if (playerChoice === "Scissors" && computerChoice === "Rock") {
+    computerScore++;
+    result.innerText = "You lose! Scissors loses to Rock.";
+  } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
+    humanScore++;
+    result.innerText = "You win! Scissors beats Paper.";
+  }
+}
