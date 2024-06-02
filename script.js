@@ -98,12 +98,10 @@ function playRound(humanChoice, computerChoice) {
 
 // Logic for the game itself
 function playGame() {
-  for (let i = 1; i < ROUNDS + 1; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    console.log(`Round ${i} of ${ROUNDS}`);
-    playRound(humanSelection, computerSelection);
-  }
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  // console.log(`Round ${i} of ${ROUNDS}`);
+  playRound(humanSelection, computerSelection);
   console.log(`HUMAN: ${humanScore} | COMPUTER: ${computerScore}`);
   if (humanScore > computerScore) {
     console.log("You won");
@@ -114,3 +112,7 @@ function playGame() {
   }
   console.log("playGame() to try again!");
 }
+
+const rockButton = document.querySelector("rock-button");
+const paperButton = document.querySelector("paper-button");
+const scissorsButton = document.querySelector("scissors-button");
