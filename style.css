@@ -1,5 +1,13 @@
 *{
   font-family: "Titan One";
+  font-size: 30px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .input-container{
@@ -9,11 +17,4 @@
   min-height: 100vh;
   text-align: center; */
   gap: 20px;
-}
-.instructions{
-  font-size: 50px;
-  background-color: red;
-  padding: 10px 20px;
-  color: black;
-  border-radius: 12px;
 }
