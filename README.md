@@ -2,4 +2,4 @@
 
 TOP Project: Rock Paper Scissors
 
-My third TOP Project, first project with JS, created a Rock Papers Scissors game, that is played through the browser console, took some time, but managed.
+My third TOP Project, first project with JS, created a Rock Papers Scissors game.
