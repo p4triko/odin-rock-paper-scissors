@@ -8,6 +8,8 @@ const scissorsButton = document.querySelector(".scissors-button");
 const result = document.querySelector(".result-text");
 
 function getComputerChoice() {
-  const computerChoice = Math.floor(Math(random) * choices.length);
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
   return computerChoice;
 }
+
+console.log(getComputerChoice());
