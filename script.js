@@ -13,7 +13,13 @@ const ROUNDS = 5;
 let humanScore = 0;
 let computerScore = 0;
 
-console.log("playGame() to start!");
+const rockButton = document.querySelector(".rock-button");
+const paperButton = document.querySelector(".paper-button");
+const scissorsButton = document.querySelector(".scissors-button");
+const result = document.querySelector(".result-text");
+rockButton.addEventListener("click", () => {
+  playRound(ROCK, getComputerChoice());
+});
 
 // Logic to get the human choice
 function getHumanChoice() {
@@ -69,7 +75,9 @@ function playRound(humanChoice, computerChoice) {
     humanScore++;
     console.log(`You won the round`);
   } else if (humanChoice === PAPER && computerChoice === SCISSORS) {
-    console.log(`You chose ${PAPER_STRING} | Computer chose ${SCISSORS_STRING}`);
+    console.log(
+      `You chose ${PAPER_STRING} | Computer chose ${SCISSORS_STRING}`
+    );
     console.log(`${PAPER_STRING} loses to ${PAPER_STRING}`);
     computerScore++;
     console.log(`You lost the round`);
@@ -80,7 +88,9 @@ function playRound(humanChoice, computerChoice) {
   }
   // Scissor game conditions
   else if (humanChoice === SCISSORS && computerChoice === PAPER) {
-    console.log(`You chose ${SCISSORS_STRING} | Computer chose ${PAPER_STRING}`);
+    console.log(
+      `You chose ${SCISSORS_STRING} | Computer chose ${PAPER_STRING}`
+    );
     console.log(`${SCISSORS_STRING} beats ${PAPER_STRING}`);
     humanScore++;
     console.log(`You won the round`);
@@ -90,7 +100,9 @@ function playRound(humanChoice, computerChoice) {
     computerScore++;
     console.log(`You lost the round`);
   } else if (humanChoice === SCISSORS && computerChoice === SCISSORS) {
-    console.log(`You chose ${SCISSORS_STRING} | Computer chose ${SCISSORS_STRING}`);
+    console.log(
+      `You chose ${SCISSORS_STRING} | Computer chose ${SCISSORS_STRING}`
+    );
     console.log(`${SCISSORS_STRING} ties with ${SCISSORS_STRING}`);
     console.log(`You tied this round`);
   }
@@ -112,7 +124,3 @@ function playGame() {
   }
   console.log("playGame() to try again!");
 }
-
-const rockButton = document.querySelector("rock-button");
-const paperButton = document.querySelector("paper-button");
-const scissorsButton = document.querySelector("scissors-button");
