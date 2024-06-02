@@ -66,11 +66,11 @@ function playGame(playerChoice) {
     humanScore = 0;
     computerScore = 0;
     gameOver.innerText =
-      "You won the game! Press any of the buttons to play again!";
+      "You won the game! Press any of the buttons to play again.";
   } else if (computerScore === rounds) {
     humanScore = 0;
     computerScore = 0;
     gameOver.innerText =
-      "You lost the game! Press any of the buttons to play again!";
+      "You lost the game! Press any of the buttons to play again.";
   }
 }
